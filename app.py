@@ -267,7 +267,7 @@ class Handler(ABC):
 class InstructorHandler(Handler):
     def handle_request(self, request):
         if "материалы" in request:
-            return "👩‍🏫 Преподаватель одобрил изменения материалов."
+            return " Преподаватель одобрил изменения материалов."
         elif self.successor:
             return self.successor.handle_request(request)
 
@@ -275,14 +275,14 @@ class InstructorHandler(Handler):
 class MethodologyDepartmentHandler(Handler):
     def handle_request(self, request):
         if "структура" in request:
-            return "📘 Методический отдел утвердил изменения структуры курса."
+            return " Методический отдел утвердил изменения структуры курса."
         elif self.successor:
             return self.successor.handle_request(request)
 
 
 class ManagementHandler(Handler):
     def handle_request(self, request):
-        return "🏛 Руководство платформы одобрило любые изменения."
+        return " Руководство платформы одобрило любые изменения."
 
 
 # ==========================
@@ -364,10 +364,10 @@ def main_menu():
             print(chain.handle_request(request))
 
         elif choice == "7":
-            print("👋 Выход из программы.")
+            print(" Выход из программы.")
             break
         else:
-            print("❌ Неверный выбор.")
+            print(" Неверный выбор.")
 
 
 # ==========================
