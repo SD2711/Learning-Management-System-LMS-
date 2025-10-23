@@ -1,0 +1,18 @@
+[
+  {
+    "type": "DesignCourse",
+    "title": "Web design",
+    "start_date": "2025-10-27",
+    "end_date": "2025-11-27",
+    "instructor": "Dimitrova",
+    "students": [
+      "Stefani",
+      " Maria",
+      " Anna"
+    ],
+    "topics": [
+      "UI/UX",
+      " prototype"
+    ]
+  }
+]
