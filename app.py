@@ -5,9 +5,9 @@ from datetime import date
 from typing import List, Dict, Any, Optional
 
 
-# ==========================
 # 1. ИСКЛЮЧЕНИЯ
-# ==========================
+
+
 class InvalidDateError(Exception):
     pass
 
@@ -20,9 +20,9 @@ class CourseNotFoundError(Exception):
     pass
 
 
-# ==========================
 # 2. ДЕКОРАТОР
-# ==========================
+
+
 def check_permissions(required_role: str):
     def decorator(func):
         def wrapper(self, *args, **kwargs):
@@ -38,9 +38,9 @@ def check_permissions(required_role: str):
     return decorator
 
 
-# ==========================
 # 3. МИКСИНЫ
-# ==========================
+
+
 class LoggingMixin:
     def log_action(self, message: str):
         logging.info(f"[LOG] {message}")
@@ -52,9 +52,9 @@ class NotificationMixin:
             logging.info(f"Уведомление для {student}: {message}")
 
 
-# ==========================
 # 4. ИНТЕРФЕЙСЫ
-# ==========================
+
+
 class Teachable(ABC):
     @abstractmethod
     def teach(self) -> str:
@@ -67,9 +67,7 @@ class Assessable(ABC):
         pass
 
 
-# ==========================
 # 5. МЕТАКЛАСС
-# ==========================
 
 
 class CourseMeta(ABCMeta):
@@ -85,9 +83,9 @@ class CourseMeta(ABCMeta):
         return cls
 
 
-# ==========================
 # 6. АБСТРАКТНЫЙ КЛАСС COURSE
-# ==========================
+
+
 class Course(ABC, LoggingMixin, NotificationMixin, metaclass=CourseMeta):
     def __init__(
         self,
@@ -153,9 +151,9 @@ class Course(ABC, LoggingMixin, NotificationMixin, metaclass=CourseMeta):
         }
 
 
-# ==========================
 # 7. ПОДКЛАССЫ
-# ==========================
+
+
 class ProgrammingCourse(Course, Teachable, Assessable):
     def __init__(
         self, title, start_date, end_date, instructor, students, topics, languages
@@ -216,9 +214,9 @@ class ScienceCourse(Course, Teachable, Assessable):
         return f"[Наука] {self.title} ({self.field})"
 
 
-# ==========================
 # 8. ПЛАТФОРМА И АДРЕС
-# ==========================
+
+
 class Address:
     def __init__(self, city, street, building):
         self.city, self.street, self.building = city, street, building
@@ -252,9 +250,7 @@ class Platform:
         print(f"✅ Курсы сохранены в {filename}")
 
 
-# ==========================
 # 9. ЦЕПОЧКА ОБЯЗАННОСТЕЙ
-# ==========================
 class Handler(ABC):
     def __init__(self, successor=None):
         self.successor = successor
