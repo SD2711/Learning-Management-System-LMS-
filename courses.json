@@ -1,18 +1,49 @@
 [
   {
-    "type": "DesignCourse",
-    "title": "Web design",
+    "type": "ProgrammingCourse",
+    "title": "Программирование",
     "start_date": "2025-10-27",
     "end_date": "2025-11-27",
-    "instructor": "Dimitrova",
+    "instructor": "Петров",
     "students": [
-      "Stefani",
-      " Maria",
-      " Anna"
+      "Ана",
+      " Мария"
     ],
     "topics": [
-      "UI/UX",
-      " prototype"
+      "Python",
+      " C#"
+    ]
+  },
+  {
+    "type": "DesignCourse",
+    "title": "Web-design",
+    "start_date": "2025-11-01",
+    "end_date": "2025-12-01",
+    "instructor": "Иванов",
+    "students": [
+      "Иван",
+      " Борис",
+      " Елена"
+    ],
+    "topics": [
+      "Прототипирование",
+      " UX/UI"
+    ]
+  },
+  {
+    "type": "ScienceCourse",
+    "title": "Science",
+    "start_date": "2025-10-25",
+    "end_date": "2025-11-25",
+    "instructor": "Иванов",
+    "students": [
+      "Борис",
+      " Петр",
+      " Иван",
+      " Мария"
+    ],
+    "topics": [
+      "Анатомия человека"
     ]
   }
 ]
